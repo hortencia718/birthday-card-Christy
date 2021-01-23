@@ -1,0 +1,23 @@
+body{
+  background-color: rgb(231, 46, 222);
+}
+*{
+  margin:0;
+  padding:0;
+}
+#cardWrapper{
+  margin:50px;
+}
+
+#card-front{
+  color:blue;
+}
+
+
+h1{
+  font-family: 'Sofia', cursive;;
+  font-size: 60px;
+  color: lime;
+  text-shadow: 2px 2px yellow;
+ 
+}
