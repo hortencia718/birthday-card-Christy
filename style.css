@@ -15,10 +15,63 @@ body, html {
   width: 100%;
   height: 100%;
 }
+.balloon{
+  display:inline-block;
+  width:120px;
+  height:145px;
+  background:rgb(18, 106, 228);
+  border-radius: 80%;
+  position:relative;
+  box-shadow: inset -10px -10px 0 rgba(0,0,0,0.07);
+  transition: transform 0.5s ease;
+  z-index:10;
+  animation: balloons 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+@keyframes balloons{
+  0%, 100%{ transform:traslateY(0)rotate(-4deg);
+  }
+  50%{transform:translateY(-25px)rotate(4deg);}
+}
+
+.balloon:before {
+  content:"▲";
+  font-size:20px;
+  color:rgb(161, 165, 161);
+  display:block;
+  text-align:center;
+  width:100%;
+  position:absolute;
+  bottom:-12px;
+  z-index:-100;
+}
+
+.balloon:after {
+ display:inline-block; top:153px;
+  position:absolute;
+  height:250px;
+  width:2px;
+  margin:0 auto;
+  content:"";
+  background:rgba(0,0,0,0.2); 
+}
+
+.balloon:nth-child(2){ background:rgb(98, 248, 98); animation-duration:3.5s; }
+.balloon:nth-child(2):before { color:rgb(221, 48, 221);  }
+
+.balloon:nth-child(3){ background:rgb(224, 247, 24); animation-duration:3s; }
+.balloon:nth-child(3):before { color:rgb(123, 129, 125);  }
+
+.balloon:nth-child(4){ background:rgb(235, 99, 9); animation-duration:4.5s; }
+.balloon:nth-child(4):before { color:hsl(59,30%,52%);  }
+
+.balloon:nth-child(5){ background:rgb(235, 38, 218); animation-duration:5s; }
+.balloon:nth-child(5):before { color:rgb(112, 113, 122);  }
+
 
 body {
   margin: 0;
-  background-color: mistyrose;
+  background-color: rgb(241, 192, 87);
   position: relative;
   perspective: 800px;
   overflow: hidden;
@@ -37,7 +90,7 @@ body {
   transform-origin: right center;
   transition: transform 1s ease;
   font-family: 'Sofia', cursive;
-  color: rgb(209, 21, 21);
+  color: rgb(240, 40, 140);
 }
 .envelope .front, .envelope .back {
   position: absolute;
@@ -45,8 +98,11 @@ body {
   height: 100%;
   background-color: rgb(107, 238, 238);
   border-radius: 5px;
-  box-shadow:  0 0 30px -5px #62f14feb;
+  box-shadow:  0 0  30px -5px #f5525feb;
 }
+
+
+
 .envelope .front {
   backface-visibility: hidden;
   cursor: pointer;
@@ -63,7 +119,7 @@ body {
   right: 10px;
   top: 10px;
   padding: 10px;
-  background: radial-gradient(rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 4px, #f6f6df 4px, #f6f6df);
+  background: radial-gradient(rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.418) 4px, #f6f6df 4px, #f6f6df);
   background-size: 20px 20px;
   background-position: -10px -10px;
 }
@@ -94,6 +150,7 @@ body {
   font-size: 50px;
   line-height: 50px;
 	color: #ff969f;
+  text-shadow: 1px 1px yellow;
 }
 .envelope .front .mail p:last-child {
   font-size: 30px;
