@@ -7,3 +7,11 @@ $(function(){
   }
   
 });
+
+// <button onclick="myFunction()">Click me</button>
+
+
+  function envelope('open') {
+    onclick()
+    alert('Button was clicked!');
+  }
